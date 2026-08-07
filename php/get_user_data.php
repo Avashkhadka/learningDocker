@@ -1,6 +1,6 @@
 <?php
 function displayUserFile(){
-    $connect = mysqli_connect("localhost","student","student123");
+    $connect = mysqli_connect("db","student","student123");
     echo "hihih";
     // $sql = "SELECT * FROM test_user_files";
     // $res_data = mysqli_query($connect,$sql);
