@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<PRODUCTS>
+<PRODUCT_DATA>
     <product>
         <id>1</id>
         <name>product A</name>
@@ -21,4 +21,4 @@
     </product>
 
 
-</PRODUCTS>
+</PRODUCT_DATA>

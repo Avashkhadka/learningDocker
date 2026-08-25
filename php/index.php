@@ -14,7 +14,7 @@
     <h3>Please select producdt from the below list & add to card</h3>
     <form action="" id="productForm">
         <label for="product">Select Products:</label>
-        <select name="product" id="product">
+        <select name="product" id="product" onchange="getProductDetails(this.value)">
             <option>--Select Product--</option>
         </select>
         <input type="submit" value="Add to Cart" id="addToCart" onclick="addToCart(event)">
