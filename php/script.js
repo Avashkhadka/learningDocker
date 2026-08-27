@@ -8,10 +8,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
     // Form validation
 
     $('#contactForm').validate({
@@ -56,6 +52,17 @@ $(document).ready(function () {
                 required: "Please enter a message",
                 minlength: "Your message must consist of at least 10 characters"
             }
+        },
+        errorPlacement: function (error, element) {
+            $(`#${element.attr("name")}Error`).html(error)
+        },
+        submitHandler: function (form) {
+            Swal.fire({
+                title: "Success!",
+                text: "Your form has been submitted successfully.",
+                icon: "success",
+                confirmButtonText: "Close"
+            })
         }
     })
 

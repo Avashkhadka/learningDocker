@@ -1,18 +1,3 @@
-<?php
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-    $data = json_decode(file_get_contents("php://input"), true);
-
-    if ($data) {
-        echo "Added to cart: " . $data["name"];
-    }
-
-    exit;
-}
-
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -54,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <h2 class="text-center">Jquery form validation</h2>
             </div>
             <div class="card-body">
-                <form action="" id="contactForm">
+                <form id="contactForm">
                     <div class="form-group mb-3">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" name="name">
@@ -86,9 +71,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
     </section>
 
-
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"
         integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.22.1/jquery.validate.min.js"
         integrity="sha512-qu7dMuIm2f0KcKZ3BOoP4c+Hn+r4E8PbD2Ro4rmKsOyheCxcwhzQpf6SojA76dn+owqfANzfTFUTkGA+HpHjOA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
