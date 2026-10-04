@@ -1,7 +1,9 @@
 <?php
+
 namespace setup;
 require_once "config.php";
 use Config\DatabaseConfig;
+
 class Setup
 {
     private $config;
@@ -22,7 +24,7 @@ class Setup
 
     public function seeData($table_name, $columns, $values)
     {
-        $query = "INSERT INTO $table_name ($columns) values ($values)";
+        $query = "INSERT INTO $table_name ($columns) VALUES ($values)";
         if ($this->config->conn->query($query) === TRUE) {
             return true;
         } else {
