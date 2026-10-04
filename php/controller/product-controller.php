@@ -1,6 +1,6 @@
 <?php
 namespace controller;
-use utils\ProductdUtil;
+use utils\ProductUtil;
 
 require_once __DIR__ . '/../utils/product-function.php';
 class ProductController
@@ -8,7 +8,7 @@ class ProductController
     public $productdUtil;
     public function __construct()
     {
-        $this->productdUtil = new ProductdUtil();
+        $this->productdUtil = new ProductUtil();
     }
     public function getProducdtList()
     {
@@ -22,7 +22,7 @@ class ProductController
                 $response[] = [
                     'id' => $product->getId(),
                     'title' => $product->getTitle(),
-                    'desc' => $product->getDesc(),
+                    'description' => $product->getDesc(),
                     'quantity' => $product->getQuantity(),
                     'category' => $product->getCategory()
                 ];

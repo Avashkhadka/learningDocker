@@ -6,26 +6,25 @@ $(document).ready(function () {
             action: "fetchProducts"
         },
         dataType: "json",
-        success: function (data) {
-            console.log(data);
-            var products = JSON.parse(data);
-            let productList = $('#product-list');
-            let tableHtml = ""
+        success: function (products) {
+
+            let productList = $('#productTable');
+            let tableHtml = "";
+
             products.forEach(function (product) {
                 tableHtml += "<tr>";
                 tableHtml += "<td>" + product.id + "</td>";
                 tableHtml += "<td>" + product.title + "</td>";
                 tableHtml += "<td>" + product.description + "</td>";
-                tableHtml += "<td>$" + product.price.toFixed(2) + "</td>";
+                tableHtml += "<td>$" + parseFloat(product.price).toFixed(2) + "</td>";
                 tableHtml += "<td>" + product.category + "</td>";
                 tableHtml += "</tr>";
             });
+
             productList.find('tbody').html(tableHtml);
         },
-        error: function (xhr, status, error) {
-            console.error("Error fetching products:", error);
-            console.error("Error fetching products:", status);
-            console.error("Error fetching products:", xhr.responseText);
+        error: function (xhr) {
+            console.log(xhr.responseText);
         }
-    })
+    });
 });

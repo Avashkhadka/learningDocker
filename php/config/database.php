@@ -11,7 +11,8 @@ class DatabaseConnection{
     public static function getConnection(){
         if(self::$conn==null){
             try{
-                self::$conn=new PDO("mysql:host=".self::$HOST.";dbname=".self::$DB_NAME,self::$USERNAME,self::$PASSWORD);
+                self::$conn=new PDO("mysql:host=".self::$HOST.";
+                dbname=".self::$DB_NAME,self::$USERNAME,self::$PASSWORD);
                 self::$conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             }catch(PDOException $e){
                 echo "Connection Error: ".$e->getMessage();

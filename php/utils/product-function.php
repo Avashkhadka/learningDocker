@@ -13,12 +13,10 @@ class ProductUtil
     public function __construct()
     {
     }
-
-
     function fetchProducts()
     {
         $this->conn = DatabaseConnection::getConnection();
-        $query = "SELECT id,title,description,price,quantity,category FROM products where is_active = :is_active";
+        $query = "SELECT id,title,description,quantity,category FROM products where is_active = :is_active";
         $stmt = $this->conn->prepare($query);
         $stmt->bindValue(":is_active", 1, PDO::PARAM_INT);
         $stmt->execute();
@@ -29,15 +27,12 @@ class ProductUtil
             $this->pm = new ProductModel();
             $this->pm->setId($row['id']);
             $this->pm->setTitle($row['title']);
-            $this->pm->setDesc($row['desc']);
+            $this->pm->setDesc($row['description']);
             $this->pm->setQuantity($row['quantity']);
             $this->pm->setCategory($row['category']);
             $products[]  = $this->pm;
         }
         return $products;
     }
-
-
 }
-
 ?>
